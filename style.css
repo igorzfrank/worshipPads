@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-first: #269fbd;
+  --color-seccond: #37798a;
+  --color-thirth: #00c1ef;
+  --color-forth: #345057;
+  --color-fifth: #293133;
+}
+
+main {
+  background: var(--color-fifth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  max-width: 1024px;
+  width: 100%;
+  height: 768px;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px;
+  border: 5px solid var(--color-forth);
+  border-radius: 30px;
+}
+
+.tom-btn {
+  color: var(--color-fifth);
+  font-family: "Nunito", sans-serif;
+  font-size: 72px;
+  width: 206px;
+  height: 188px;
+  background: var(--color-forth);
+  border: 5px solid var(--color-seccond);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.tom-btn:hover {
+  background: var(--color-seccond);
+  border: 5px solid var(--color-thirth);
+  box-shadow: 0px 0px 20px 0px var(--color-first);
+}
+
+.tom-btn.is-active {
+  background: var(--color-seccond);
+  border: 5px solid var(--color-thirth);
+  box-shadow: 0px 0px 20px 0px var(--color-first);
+}
