@@ -1,10 +1,20 @@
 const audio = document.getElementById("audio");
 
-// function playSound(frequency) {
-//   updatePads();
-//   audio.src = `path/to/your/audio-${frequency}.mp3`; // Substitua pelo caminho do seu áudio
-//   audio.play();
-// }
+let typePad = "custom";
+
+function updateType() {
+  const typeBtns = document.querySelectorAll(".type-btn");
+
+  typeBtns.forEach((typeBtn) => {
+    typeBtn.addEventListener("click", function () {
+      typeBtns.forEach((item) => {
+        item.classList.remove("is-active");
+      });
+      typeBtn.classList.add("is-active");
+      typePad = typeBtn.dataset.type
+    });
+  });
+}
 
 function updatePads() {
   const pads = document.querySelectorAll(".tom-btn");
@@ -20,6 +30,7 @@ function updatePads() {
           item.disabled = true;
         });
         pad.classList.add("is-active");
+        console.log(typePad)
 
         const volumeInterval = setInterval(() => {
           if (audio.volume > 0.1) {
@@ -28,7 +39,7 @@ function updatePads() {
             clearInterval(volumeInterval);
 
             // Troca a faixa de áudio
-            audio.src = `./audio/audio-${pad.dataset.tom}.mp3`;
+            audio.src = `./audio/audio-${typePad}-${pad.dataset.tom}.mp3`;
             console.log(audio.src);
             audio.play();
 
@@ -52,3 +63,4 @@ function updatePads() {
 
 // Atualiza os pads com a frequência inicial
 updatePads();
+updateType();

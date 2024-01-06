@@ -17,17 +17,90 @@
 main {
   background: var(--color-fifth);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 32px;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
 }
 
-.container {
+.select-container {
+  padding: 20px;
+  border: 5px solid var(--color-forth);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+}
+
+.select-container::before {
+  font-size: 32px;
+  color: var(--color-seccond);
+  content: 'Type';
+  font-family: "Nunito", sans-serif;
+  position: absolute;
+  top: -75px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.type-btn {
+  color: var(--color-fifth);
+  font-size: 18px;
+  font-family: "Nunito", sans-serif;
+  width: 100px;
+  height: 100px;
+  border: 5px solid var(--color-seccond);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.type-btn.is-active {
+  color: var(--color-thirth);
+  border: 5px solid var(--color-thirth);
+  box-shadow: 0px 0px 20px 0px var(--color-first);
+}
+
+button[data-type="organ"] {
+  background: #EA3281;
+}
+
+button[data-type="waves"] {
+  background: #239DD8;
+}
+
+button[data-type="prayer"] {
+  background: #AE2A1C;
+}
+
+button[data-type="sponta"] {
+  background: #9D1FEB;
+}
+
+
+button[data-type="peaceful"] {
+  background: #E57828;
+}
+
+button[data-type="analog"] {
+  background: #004AE9;
+}
+
+button[data-type="drone"] {
+  background: #657F58;
+}
+
+button[data-type="custom"] {
+  background: #345057;
+}
+
+.tom-container {
   max-width: 1024px;
   width: 100%;
-  height: 768px;
+  min-height: 768px;
   display: flex;
   flex-direction: row;
   flex-shrink: 1;
@@ -52,6 +125,7 @@ main {
   cursor: pointer;
   transition: all 0.1s ease-in-out;
 }
+
 .tom-btn:hover {
   background: var(--color-seccond);
   border: 5px solid var(--color-thirth);
@@ -62,4 +136,27 @@ main {
   background: var(--color-seccond);
   border: 5px solid var(--color-thirth);
   box-shadow: 0px 0px 20px 0px var(--color-first);
+}
+
+@media (max-width: 1024px) {
+
+  .type-btn {
+    font-size: 8px;
+    border-radius: 10px;
+    border: 2px solid var(--color-seccond);
+    width: 50px;
+    height: 50px;
+  }
+
+  .tom-container {
+    min-height: initial;
+    height: auto;
+    gap: 10px;
+  }
+
+  .tom-btn {
+    font-size: 42px;
+    width: 100px;
+    height: 100px;
+  }
 }

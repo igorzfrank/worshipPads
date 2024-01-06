@@ -8,7 +8,15 @@
   </head>
   <body>
     <main>
-      <div class="container">
+
+      <div class="select-container">
+        <button class="type-btn" data-type="organ">organ</button>
+        <button class="type-btn" data-type="waves">waves</button>
+        <button class="type-btn" data-type="prayer">prayer</button>
+        <button class="type-btn" data-type="sponta">sponta</button>
+      </div>
+
+      <div class="tom-container">
         <button class="tom-btn is-active" data-tom="C">C</button>
         <button class="tom-btn" data-tom="Db">C#</button>
         <button class="tom-btn" data-tom="D">D</button>
@@ -22,9 +30,16 @@
         <button class="tom-btn" data-tom="Bb">A#</button>
         <button class="tom-btn" data-tom="B">B</button>
       </div>
+
+      <div class="select-container">
+        <button class="type-btn" data-type="peaceful">peaceful</button>
+        <button class="type-btn" data-type="analog">analog</button>
+        <button class="type-btn" data-type="drone">drone</button>
+        <button class="type-btn is-active" data-type="custom">custom</button>
+      </div>
     </main>
 
-    <audio id="audio" preload="auto" autoplay>
+    <audio id="audio" preload="auto" loop>
       <source src="./audio/audio-C.mp3" type="audio/mp3" />
     </audio>
     
