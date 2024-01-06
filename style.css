@@ -39,7 +39,7 @@ main {
 .select-container::before {
   font-size: 32px;
   color: var(--color-seccond);
-  content: 'Type';
+  content: "Type";
   font-family: "Nunito", sans-serif;
   position: absolute;
   top: -75px;
@@ -65,32 +65,31 @@ main {
 }
 
 button[data-type="organ"] {
-  background: #EA3281;
+  background: #ea3281;
 }
 
 button[data-type="waves"] {
-  background: #239DD8;
+  background: #239dd8;
 }
 
 button[data-type="prayer"] {
-  background: #AE2A1C;
+  background: #ae2a1c;
 }
 
 button[data-type="sponta"] {
-  background: #9D1FEB;
+  background: #9d1feb;
 }
 
-
 button[data-type="peaceful"] {
-  background: #E57828;
+  background: #e57828;
 }
 
 button[data-type="analog"] {
-  background: #004AE9;
+  background: #004ae9;
 }
 
 button[data-type="drone"] {
-  background: #657F58;
+  background: #657f58;
 }
 
 button[data-type="custom"] {
@@ -139,6 +138,9 @@ button[data-type="custom"] {
 }
 
 @media (max-width: 1024px) {
+  .select-container {
+    gap: 10px;
+  }
 
   .type-btn {
     font-size: 8px;
@@ -152,11 +154,29 @@ button[data-type="custom"] {
     min-height: initial;
     height: auto;
     gap: 10px;
+    padding: 10px;
   }
 
   .tom-btn {
     font-size: 42px;
     width: 100px;
     height: 100px;
+  }
+}
+
+@media (max-width: 560px) {
+  main {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .select-container {
+    padding: 15px;
+    border: 5px solid var(--color-forth);
+    flex-direction: row;
+  }
+
+  .select-container:last-child:before {
+    display: none;
   }
 }
