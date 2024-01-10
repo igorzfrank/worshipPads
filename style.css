@@ -27,13 +27,14 @@ main {
 }
 
 .select-container {
-  padding: 20px;
-  border: 5px solid var(--color-forth);
+  padding: 10px;
+  border: 3px solid var(--color-forth);
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 10px;
   position: relative;
+  box-shadow: 0px 0px 5px 5px rgb(35, 157, 216, 0.7), 0px 0px 10px 15px rgb(35, 157, 216, 0.3);
 }
 
 .select-container::before {
@@ -55,9 +56,10 @@ main {
   font-weight: 900;
   width: 100px;
   height: 100px;
-  border: 5px solid var(--color-seccond);
-  border-radius: 30px;
+  border: 3px solid var(--color-seccond);
+  border-radius: 22px;
   cursor: pointer;
+  box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.3), 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
 }
 
 .type-btn.is-active,
@@ -100,40 +102,42 @@ button[data-type="custom"] {
 }
 
 .tom-container {
-  max-width: 1024px;
+  max-width: 702px;
   width: 100%;
-  min-height: 768px;
+  min-height: 503px;
   display: flex;
   flex-direction: row;
   flex-shrink: 1;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 32px;
-  padding: 20px;
-  border: 5px solid var(--color-forth);
+  gap: 10px;
+  padding: 10px;
+  border: 3px solid var(--color-forth);
   border-radius: 30px;
+  box-shadow: 0px 0px 5px 5px rgb(35, 157, 216, 0.7), 0px 0px 10px 15px rgb(35, 157, 216, 0.3);
 }
 
 .tom-btn {
   color: var(--color-fifth);
   font-family: "Nunito", sans-serif;
   font-weight: 900;
-  font-size: 72px;
-  width: 206px;
-  height: 188px;
+  font-size: 52px;
+  width: 160px;
+  height: 150px;
   background: var(--color-forth);
-  border: 5px solid var(--color-seccond);
-  border-radius: 30px;
+  border: 3px solid var(--color-seccond);
+  border-radius: 22px;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
+  box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.3), 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
 }
 
 .tom-btn.is-active,
 .tom-btn:hover {
   color: var(--color-thirth);
   background: var(--color-seccond);
-  border: 5px solid var(--color-thirth);
+  border: 3px solid var(--color-thirth);
   box-shadow: 0px 0px 20px 0px var(--color-first);
 }
 
@@ -144,8 +148,12 @@ button[data-type="custom"] {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  color: var(--color-thirth);
+  color: var(--color-seccond);
   text-align: right;
+}
+
+.footer strong {
+  color: var(--color-thirth);
 }
 
 @media (max-width: 1280px) {
@@ -162,7 +170,7 @@ button[data-type="custom"] {
   }
 
   .tom-container {
-    max-width: 560px;
+    max-width: 460px;
     min-height: initial;
     height: auto;
     gap: 10px;
@@ -176,13 +184,25 @@ button[data-type="custom"] {
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 760px) {
   main {
     flex-direction: column;
     gap: 20px;
+    padding: 0px 20px;
+  }
+
+  .tom-container {
+    max-width: 320px;
+  }
+
+  .tom-btn {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
   }
 
   .select-container {
+    width: auto;
     padding: 15px;
     border: 5px solid var(--color-forth);
     flex-direction: row;
@@ -190,5 +210,12 @@ button[data-type="custom"] {
 
   .select-container:last-child:before {
     display: none;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 10px;
+    right: calc(50% - 129px);
+    text-align: center;
   }
 }
