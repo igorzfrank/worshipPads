@@ -34,17 +34,18 @@ main {
   flex-direction: column;
   gap: 10px;
   position: relative;
-  box-shadow: 0px 0px 5px 5px rgb(35, 157, 216, 0.7), 0px 0px 10px 15px rgb(35, 157, 216, 0.3);
+  border: 2px solid black;
+  box-shadow: 0px 0px 5px 5px rgba(55, 121, 138, 0.7), 0px 0px 10px 15px rgba(55, 121, 138, 0.3);
 }
 
 .select-container::before {
   font-size: 32px;
-  color: var(--color-seccond);
+  color: var(--color-forth);
   content: "Type";
   font-family: "Nunito", sans-serif;
   font-weight: 900;
   position: absolute;
-  top: -75px;
+  top: -60px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -113,9 +114,9 @@ button[data-type="custom"] {
   justify-content: center;
   gap: 10px;
   padding: 10px;
-  border: 3px solid var(--color-forth);
+  border: 3px solid black;
   border-radius: 30px;
-  box-shadow: 0px 0px 5px 5px rgb(35, 157, 216, 0.7), 0px 0px 10px 15px rgb(35, 157, 216, 0.3);
+  box-shadow: 0px 0px 5px 5px rgba(55, 121, 138, 0.7), 0px 0px 10px 15px rgba(55, 121, 138, 0.3);
 }
 
 .tom-btn {
