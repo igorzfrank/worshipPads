@@ -1,6 +1,9 @@
 const audio = document.getElementById("audio");
 
 let typePad = "custom";
+let tomPad;
+
+audio.playing = false;
 
 function updateType() {
   const typeBtns = document.querySelectorAll(".type-btn");
@@ -11,7 +14,31 @@ function updateType() {
         item.classList.remove("is-active");
       });
       typeBtn.classList.add("is-active");
-      typePad = typeBtn.dataset.type
+      typePad = typeBtn.dataset.type;
+      
+      if (audio.playing == true) {
+        const volumeInterval = setInterval(() => {
+          if (audio.volume > 0.1) {
+            audio.volume -= 0.1; // Ajuste este valor conforme necessário
+          } else {
+            clearInterval(volumeInterval);
+
+            // Troca a faixa de áudio
+            audio.src = `./audio/audio-${typePad}-${padTom}.mp3`;
+            audio.playing = true;
+            audio.play();
+
+            // Aumenta o volume gradualmente para 1
+            const fadeInInterval = setInterval(() => {
+              if (audio.volume < 0.9) {
+                audio.volume += 0.1; // Ajuste este valor conforme necessário
+              } else {
+                clearInterval(fadeInInterval);
+              }
+            }, 200);
+          }
+        }, 200);
+      }
     });
   });
 }
@@ -24,14 +51,14 @@ function updatePads() {
       if (pad.classList.contains("is-active")) {
         pad.classList.remove("is-active");
         audio.pause();
+        audio.playing = false;
       } else {
         pads.forEach((item) => {
           item.classList.remove("is-active");
           item.disabled = true;
         });
         pad.classList.add("is-active");
-        console.log(typePad)
-
+        padTom = pad.dataset.tom;
         const volumeInterval = setInterval(() => {
           if (audio.volume > 0.1) {
             audio.volume -= 0.1; // Ajuste este valor conforme necessário
@@ -39,8 +66,8 @@ function updatePads() {
             clearInterval(volumeInterval);
 
             // Troca a faixa de áudio
-            audio.src = `./audio/audio-${typePad}-${pad.dataset.tom}.mp3`;
-            console.log(audio.src);
+            audio.src = `./audio/audio-${typePad}-${padTom}.mp3`;
+            audio.playing = true;
             audio.play();
 
             // Aumenta o volume gradualmente para 1
