@@ -1,4 +1,5 @@
 const audio = document.getElementById("audio");
+const main = document.querySelector("main");
 
 let typePad = "custom";
 let tomPad;
@@ -15,8 +16,9 @@ function updateType() {
       });
       typeBtn.classList.add("is-active");
       typePad = typeBtn.dataset.type;
-      
+
       if (audio.playing == true) {
+        main.classList.add("disabled");
         const volumeInterval = setInterval(() => {
           if (audio.volume > 0.1) {
             audio.volume -= 0.1; // Ajuste este valor conforme necessário
@@ -34,6 +36,7 @@ function updateType() {
                 audio.volume += 0.1; // Ajuste este valor conforme necessário
               } else {
                 clearInterval(fadeInInterval);
+                main.classList.remove("disabled");
               }
             }, 200);
           }
@@ -55,9 +58,9 @@ function updatePads() {
       } else {
         pads.forEach((item) => {
           item.classList.remove("is-active");
-          item.disabled = true;
         });
         pad.classList.add("is-active");
+        main.classList.add("disabled");
         padTom = pad.dataset.tom;
         const volumeInterval = setInterval(() => {
           if (audio.volume > 0.1) {
@@ -76,9 +79,10 @@ function updatePads() {
                 audio.volume += 0.1; // Ajuste este valor conforme necessário
               } else {
                 clearInterval(fadeInInterval);
-                pads.forEach((item) => {
-                  item.disabled = false;
-                });
+                main.classList.remove("disabled");
+                // pads.forEach((item) => {
+                //   item.disabled = false;
+                // });
               }
             }, 200);
           }

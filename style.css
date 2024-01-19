@@ -26,6 +26,10 @@ main {
   height: auto;
 }
 
+main.disabled {
+  pointer-events: none;
+}
+
 .select-container {
   padding: 10px;
   border: 3px solid var(--color-forth);
