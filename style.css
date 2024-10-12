@@ -7,11 +7,11 @@
 }
 
 :root {
-  --color-first: #269fbd;
-  --color-seccond: #37798a;
-  --color-thirth: #00c1ef;
-  --color-forth: #345057;
-  --color-fifth: #293133;
+  --color-first: #707070;
+  --color-seccond: #686868;
+  --color-thirth: #ffffff;
+  --color-forth: #0a0a0a;
+  --color-fifth: #1b1b1b;
 }
 
 main {
@@ -39,13 +39,13 @@ main.disabled {
   gap: 10px;
   position: relative;
   border: 2px solid black;
-  box-shadow: 0px 0px 5px 5px rgba(55, 121, 138, 0.7),
-    0px 0px 10px 15px rgba(55, 121, 138, 0.3);
+  box-shadow: 0px 0px 5px 5px rgba(128, 128, 128, 0.7),
+    0px 0px 10px 15px rgba(255, 255, 255, 0.3);
 }
 
 .select-container::before {
   font-size: 32px;
-  color: var(--color-forth);
+  color: var(--color-thirth);
   content: "Type";
   font-family: "Nunito", sans-serif;
   font-weight: 900;
@@ -57,11 +57,11 @@ main.disabled {
 
 .type-btn {
   color: var(--color-fifth);
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Nunito", sans-serif;
   font-weight: 900;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border: 3px solid var(--color-seccond);
   border-radius: 22px;
   cursor: pointer;
@@ -104,6 +104,14 @@ button[data-type="drone"] {
   background: #657f58;
 }
 
+button[data-type="reverse"] {
+  background: #970186;
+}
+
+button[data-type="techno"] {
+  background: #00D5E2;
+}
+
 button[data-type="custom"] {
   background: #345057;
 }
@@ -122,12 +130,12 @@ button[data-type="custom"] {
   padding: 10px;
   border: 3px solid black;
   border-radius: 30px;
-  box-shadow: 0px 0px 5px 5px rgba(55, 121, 138, 0.7),
-    0px 0px 10px 15px rgba(55, 121, 138, 0.3);
+  box-shadow: 0px 0px 5px 5px rgba(128, 128, 128, 0.7),
+    0px 0px 10px 15px rgba(255, 255, 255, 0.3);
 }
 
 .tom-btn {
-  color: var(--color-fifth);
+  color: var(--color-first);
   font-family: "Nunito", sans-serif;
   font-weight: 900;
   font-size: 52px;
@@ -172,11 +180,11 @@ button[data-type="custom"] {
   }
 
   .type-btn {
-    font-size: 12px;
+    font-size: 10px;
     border-radius: 10px;
-    border: 1px solid var(--color-seccond);
-    width: 67px;
-    height: 67px;
+    border: 3px solid var(--color-seccond);
+    width: 55px;
+    height: 55px;
   }
 
   .type-btn.is-active,
@@ -209,8 +217,8 @@ button[data-type="custom"] {
 
   .tom-container {
     max-width: 320px;
-    box-shadow: 0px 0px 2px 2px rgba(55, 121, 138, 0.7),
-      0px 0px 5px 7px rgba(55, 121, 138, 0.3);
+      box-shadow: 0px 0px 2px 2px rgba(128, 128, 128, 0.7),
+      0px 0px 5px 7px rgba(255, 255, 255, 0.3);
   }
 
   .tom-btn {
@@ -223,8 +231,8 @@ button[data-type="custom"] {
     width: auto;
     padding: 10px;
     flex-direction: row;
-    box-shadow: 0px 0px 2px 2px rgba(55, 121, 138, 0.7),
-      0px 0px 5px 7px rgba(55, 121, 138, 0.3);
+    box-shadow: 0px 0px 2px 2px rgba(128, 128, 128, 0.7),
+    0px 0px 5px 7px rgba(255, 255, 255, 0.3);
   }
 
   .select-container::before {
